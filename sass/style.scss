@@ -3,9 +3,9 @@
 /* Variables */
 
 $color-light: #000000;
-$color-grey: #444;
-$color-white: #ececec;
-$color-dark: #222222;
+$color-dark: #444;
+$color-white: #ffffff;
+$color-black: #000000;
 
 $font-logo: 'Sacramento', cursive;
 $font-header: 'Oswald', sans-serif;
@@ -47,13 +47,23 @@ body {
 
 a, a > * {
   text-decoration: none;
-  color: $color-dark;
-  transition: all .2s ease;
+  color: $color-black;
+  transition: all .4s ease;
 }
 
 a:hover, a:hover span {
   font-weight: 900;
 }
+
+.tag-size-1 {font-size: 100%;}
+
+.tag-size-2 {font-size: 110%;}
+
+.tag-size-3 {font-size: 120%;}
+
+.tag-size-4 {font-size: 130%;}
+
+.tag-size-5 {font-size: 140%;}
 
 /* Layout */
 
@@ -66,7 +76,7 @@ a:hover, a:hover span {
 .sidebar, .posts {
   background: $color-light;
   padding: 20px;
-  border: 3px solid $color-dark;
+  border: 3px solid $color-black;
   margin-bottom: 20px;
   background-image: url("../images/pattern.png");
 }
@@ -86,7 +96,7 @@ a:hover, a:hover span {
 
 .list {
   list-style-type: none;
-  margin: 0;  
+  margin: 0;
   padding: 0;
 
   .active {
@@ -97,6 +107,7 @@ a:hover, a:hover span {
 .list-horizontal {
   li {
     display: inline-block;
+    padding: 0 10px;
   }
 }
 
@@ -193,6 +204,7 @@ a:hover, a:hover span {
 
 .post-author {
   font-style: italic;
+  text-transform: capitalize;
 }
 
 .post-tags {
@@ -206,8 +218,13 @@ a:hover, a:hover span {
 /* Additionals */
 
 .additionals {
-  .tags {
-    columns: 2;
+  .tags li {
+    display: inline-block;
+    padding: 5px 10px;
+  }
+
+  .author-name {
+    text-transform: capitalize;
   }
 }
 
@@ -217,10 +234,6 @@ a:hover, a:hover span {
   }
 
   .additionals {
-    .tags {
-      columns: 4;
-    }
-
     .authors {
       columns: 2;
     }
@@ -333,9 +346,5 @@ a:hover, a:hover span {
 @media (min-width: 1400px) {
   .container {
     max-width: 1320px;
-  }
-
-  .additionals .tags {
-    columns: 2;
   }
 }
